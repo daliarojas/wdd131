@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #2667ff; /* Dark Violet */
-    --secondary-color: #87bfff; /* Blue Violet */
-    --accent-color: #add7f6; /* Light Purple */
+    --primary-color: #2667ff; 
+    --secondary-color: #87bfff; 
+    --accent-color: #add7f6; 
     --text-color: #fff;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Courgette", cursive;
     margin: 0;
     background-color: var(--accent-color);
 }
@@ -46,7 +46,6 @@ nav a:hover {
     display: none;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -62,7 +61,7 @@ nav a:hover {
         font-size: 2rem;
         cursor: pointer;
         align-self: flex-end; /* Align to the right */
-        margin-top: -3.5rem; /* Pull up to align with title */
+        margin-top: -2.5rem; 
     }
 
     nav {

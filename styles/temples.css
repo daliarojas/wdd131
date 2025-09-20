@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #2667ff; /* Dark Violet */
-    --secondary-color: #87bfff; /* Blue Violet */
-    --accent-color: #add7f6; /* Light Purple */
+    --primary-color: #2667ff; 
+    --secondary-color: #87bfff; 
+    --accent-color: #add7f6;
     --text-color: #fff;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Courgette", cursive;
     margin: 0;
     background-color: var(--accent-color);
 }
@@ -28,11 +28,22 @@ header h1 {
     margin: 0;
 }
 
+nav {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+nav.show {
+    display: flex; /* Displayed when the .show class is added by JS */
+}
+
 nav a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.1rem;
-    margin-left: 2rem;
+    margin: 0.5rem 0;
     padding: 0.5rem;
     transition: background-color 0.3s;
 }
@@ -41,48 +52,14 @@ nav a:hover {
     background-color: var(--secondary-color);
 }
 
-/* Hide hamburger menu by default on desktop */
+/* Hamburger menu button styles */
 #menu-toggle {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Show hamburger menu and hide nav */
-    #menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--text-color);
-        font-size: 2rem;
-        cursor: pointer;
-        align-self: flex-end; /* Align to the right */
-        margin-top: -3.5rem; /* Pull up to align with title */
-    }
-
-    nav {
-        display: none; /* Hide the nav menu initially */
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-    }
-
-    /* JavaScript will add a class to show the menu */
-    nav.show {
-        display: flex;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Stack images vertically */
-    }
+    display: block; /* Visible on mobile */
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 main {
@@ -99,7 +76,7 @@ main h2 {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Single column on mobile */
     gap: 1.5rem;
     padding: 1rem;
 }
@@ -140,4 +117,29 @@ footer p {
     font-size: 0.8rem;
     font-style: italic;
     opacity: 0.8;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+    }
+    
+    #menu-toggle {
+        display: none; /* Hide hamburger menu on desktop */
+    }
+
+    nav {
+        display: flex; /* Show horizontal navigation on desktop */
+        flex-direction: row;
+        width: auto;
+    }
+
+    nav a {
+        margin-left: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid layout for images */
+    }
 }
