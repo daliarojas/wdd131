@@ -1,0 +1,107 @@
+body {
+    font-family: "Indie Flower", cursive;
+    margin: 0;
+    color: #333;
+}
+
+header {
+    background-color: #EA3788;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.content {
+    background-image: url('https://www.comeseeperutours.com/wp-content/uploads/2025/04/Best-Time-to-Visit-Lima.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Adds a dark overlay for text readability */
+    z-index: 1;
+}
+
+.data-box, .weather-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensures boxes are above the overlay */
+}
+
+.data-box {
+    align-self: flex-start;
+}
+
+.weather-box {
+    align-self: flex-end;
+}
+
+h2 {
+    color: white;
+    padding: 10px;
+    margin: -20px -20px 10px -20px;
+    font-size: 1.2em;
+}
+
+.data-box h2 {
+    background-color: #EA3788; 
+}
+
+.weather-box h2 {
+    background-color: #EA3788; 
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px; 
+    }
+
+    .data-box, .weather-box {
+        width: 90%;
+        margin: 10px 0;
+        align-self: auto;
+    }
+    
+    .weather-box {
+        text-align: left; 
+    }
+
+    .weather-box h2 {
+        text-align: left; 
+    }
+}
+
+footer {
+    background-color: #EA3788;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}
