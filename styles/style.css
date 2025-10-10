@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #575366; /* Dark Blue */
+    --secondary-color: #cccccc; /* Light Gray */
+    --accent-color: #ffcc00; /* Yellow/Gold for stars */
+    --text-color: #333;
+    --background-color: #f4f4f9;
+    --border-radius: 8px;
+    --padding-size: 1.5em;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--padding-size);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--padding-size);
+}
+
+form {
+    background: white;
+    padding: var(--padding-size);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding-size);
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+}
+
+/* Style for all input/select/textarea elements */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    font-size: 1em;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Star Rating Styling */
+.rating-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* Reverses the order so the 5 is first in HTML, but last on screen */
+    justify-content: flex-end; /* Align to the right for the reversed order */
+    font-size: 2em;
+}
+
+.star-rating input[type="radio"] {
+    display: none; /* Hide the actual radio button */
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: var(--secondary-color); /* Unselected star color */
+    margin-right: 5px;
+    transition: color 0.2s;
+}
+
+/* Highlight the hovered star and all stars before it */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: var(--accent-color);
+}
+
+/* Highlight the checked star and all stars before it */
+.star-rating input[type="radio"]:checked ~ label {
+    color: var(--accent-color); /* Selected star color */
+}
+
+/* Checkbox/Radio Layout */
+.checkbox-group > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid var(--secondary-color);
+    font-size: 0.9em;
+    color: #666;
+}
