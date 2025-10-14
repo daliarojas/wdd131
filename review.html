@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation</title>
+    <meta name="description" content="A travel guide to visit the beautiful country of Japan.">
+    <meta name="author" content="Dalia Rojas">
+    <link rel="stylesheet" href="styles/siteplan.css">
+    <script src="scripts/siteplan.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">Japan: A Comprehensive Travel Guide</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="siteplan.html">Return to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="confirmation-page">
+        <h1>Arigatou Gozaimasu! Thank You!</h1>
+        <p class="review-status">You have successfully submitted **<span id="display-review-count">0</span>** tips on this device!</p>
+        <a href="siteplan.html" class="button">Back to the Guide</a>
+
+        <section class="review-form-section">
+            <h2>Share Your Budget Tips!</h2>
+            <p>Help other travelers by leaving a quick review or a suggestion.</p>
+            <form method="get" action="review.html" class="review-form">
+                <div class="form-group">
+                    <label for="trip-duration">Trip Duration</label>
+                    <select id="trip-duration" name="duration" required>
+                        <option value="" disabled selected>How long was your trip?</option>
+                        <option value="7">7 Days or Less</option>
+                        <option value="14">14 Days</option>
+                        <option value="30">More than 14 Days</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tip-type">Tip Category</label>
+                    <input type="radio" id="tip-food" name="tip-category" value="food" required><label for="tip-food">Food</label>
+                    <input type="radio" id="tip-lodging" name="tip-category" value="lodging"><label for="tip-lodging">Lodging</label>
+                    <input type="radio" id="tip-transport" name="tip-category" value="transport"><label for="tip-transport">Transport</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-text">Your Best Budget Tip</label>
+                    <textarea id="review-text" name="review" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Submit Tip</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+         <p>&copy;<span id="currentyear"></span> Dalia Rojas - Midvale, UT</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

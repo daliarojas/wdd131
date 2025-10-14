@@ -1,0 +1,321 @@
+/* Custom Properties for Theming */
+:root {
+    --primary-color: #A14a76; 
+    --secondary-color: #f786aa; 
+    --accent-color: #fbc2b5;   
+    --background-color: #F8F8FF; 
+    --text-color: #333;
+    --light-text: #fff;
+    --max-width: 1200px;
+}
+
+/* Global Styles and Typography */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+}
+
+.nav-links li a {
+    color: var(--light-text);
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Mobile Menu Toggle */
+#menu-toggle {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Hidden on larger screens */
+}
+
+/* Main Content Layout */
+main {
+    max-width: var(--max-width);
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section */
+.hero-image {
+  background-image: url("../images/hero-tokyo.jpg");
+  height: 700px;
+  width: 100vw;
+  background-position: center bottom;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.hero-text {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  font-size: 32px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+
+
+/* Card Grid (Itineraries) - CSS Grid */
+.card-grid {
+    display: grid;
+    /* Responsive Grid: 3 columns, minimum 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid var(--secondary-color);
+    border-top: 5px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card .cost {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.1em;
+}
+
+/* Content Grid for Food/Travel Pages - CSS Flexbox */
+.content-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.food-tips, .accommodation-tips, .transport-tips, .activities-tips {
+    flex: 1; /* Makes them take up equal space */
+}
+
+.content-grid article {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--secondary-color);
+}
+
+.content-grid article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.review-form-section {
+    text-align: center;
+}
+
+.review-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.review-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review-form input[type="radio"],
+.review-form select,
+.review-form textarea {
+    margin-right: 5px;
+}
+
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.review-form button, .button {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s;
+    display: block;
+    text-align: center;
+}
+
+.review-form button:hover, .button:hover {
+    background-color: #ffa8a9;
+}
+
+/* Confirmation Page */
+.confirmation-page {
+    text-align: center;
+    padding: 50px;
+}
+
+.review-status {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-size: 0.8em;
+    margin-top: 30px;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+/* Lazy Loading Image Fallback/Initial State */
+.lazy-load-img {
+    min-height: 100px; 
+    background-color: #eee;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+/* Mobile (Portrait and Landscape) - Max-width 768px */
+@media (max-width: 768px) {
+    
+    /* Navigation Toggle */
+    .nav-links {
+        display: none; /* Hide default nav */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Below header */
+        left: 0;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        text-align: center;
+    }
+    
+    .nav-links.open {
+        display: flex; /* Show when open */
+    }
+
+    .nav-links li a {
+        padding: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-toggle {
+        display: block; /* Show the menu button */
+    }
+    
+    header {
+        padding: 10px 15px;
+    }
+
+    /* Content Layout Adjustments */
+    .content-grid {
+        flex-direction: column; /* Stacks sections vertically */
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr; /* Single column grid for small screens */
+    }
+    
+    section {
+        padding: 15px;
+    }
+}
